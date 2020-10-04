@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="../../assets/img/classroom.jpg" alt="classroom">
+    <ion-card-header>
+      <ion-card-subtitle>Classroom AfterDance Manager</ion-card-subtitle>
+      <ion-card-title>@10Dance</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        @10Dance is an AfterDance application originally designed
+        to help Sunday School students in their classes
+      </p>
+      <a routerLink="/roster" routerDirection="forward">
+      Go to Roster</a>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

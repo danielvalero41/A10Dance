@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Roster</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list>
+      <ion-item-sliding *ngFor="let student of students">
+
+        <ion-item>
+          <ion-icon slot="start" name="person-outline"></ion-icon>
+          <ion-label> {{student.firstName}} {{student.lastName}} </ion-label>
+          <ion-icon *ngIf="student.status==='present'" slot="end" name="eye"></ion-icon>
+          <ion-icon *ngIf="student.status==='absent'" slot="end" name="eye-off-outline"></ion-icon>  
+
+          <ion-buttons slot="end">
+            <ion-button (click)="presentActionSheet(student)">
+              <ion-icon slot="icon-only" name="ellipsis-horizontal-outline"></ion-icon>            
+            </ion-button>
+            <ion-button>
+              <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>            
+            </ion-button>
+          </ion-buttons>        
+        </ion-item> 
+
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="presentDeleteAlert(student)">Delete</ion-item-option>
+        </ion-item-options>        
+        
+      </ion-item-sliding>
+    </ion-list>
+  </ion-list>
+</ion-content>

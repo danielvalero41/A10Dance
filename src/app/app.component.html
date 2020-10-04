@@ -1,0 +1,22 @@
+<ion-app>
+  <ion-split-pane contentId="main" when="xs" [disabled]="true" (ionSplitPaneVisible)="onSplitPaneVisible(event)">
+    <ion-menu contentId="main" menuId="main" side="start" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toogle *ngFor="let appPage of appPages" auto-hide="true">
+            <ion-item [routerLink]="appPage.url" routerDirection="root" lines="none">
+              <ion-icon slot="start" [name]="appPage.icon"></ion-icon>   
+              <ion-label> {{appPage.title}} </ion-label>           
+            </ion-item>
+          </ion-menu-toogle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>  
+</ion-app>

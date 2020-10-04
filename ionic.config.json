@@ -1,0 +1,7 @@
+{
+  "name": "a10Dance",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
